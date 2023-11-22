@@ -1,0 +1,100 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    outline:  none;
+    .container{
+        background-color: #3333;
+        height: 100vh;
+        width: 100%;
+        justify-content: center;
+        display: flex;
+        align-items: center;
+        .card{
+            background-color: black;
+            color: white;
+            min-height: 70%;
+            width: 65%;
+            border-radius: 10px;
+            overflow: auto;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.603);
+            & h2{
+                background-color: rgb(100, 163, 76);
+                color:gold;
+                text-align: center;
+                padding: 10px;
+                margin-bottom: 10px;
+                border-bottom-left-radius: 10px ;
+                border-bottom-right-radius: 10px ;
+                font-size: 2.1rem;
+                text-shadow: 5px 5px 5px black;
+            }
+            #inputTodo{
+                padding: 5px 10px;
+                border-radius: .6rem;
+                width: 65%;
+                margin: 10px 5px;
+                font-size: 1rem;
+                border: none;
+            }
+            #todoButton{
+                width: 28%;
+                padding: 5px 10px;
+                border-radius: .6rem;
+                font-size: 1rem;
+                font-weight: bolder;
+                background-color: pink;
+                cursor: pointer;
+                border: none;
+                transition: all .4s;
+                &:hover{
+                    background-color: #213294b8;
+                    color: white;
+                }
+            }
+            #message{
+                background-color: rgba(53, 53, 204, 0.353);
+                padding: 5px 10px ;
+                transition: all .2s;
+                border: 1px solid rgba(0, 0, 255, 0.723);
+                border-left: 4px solid blue;
+            }
+            #todoLists{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                & li{
+                    display: flex;
+                    height: 50%;
+                    width: 95%;
+                    align-items: center;
+                    padding: 5px 10px;
+                    border-radius: .3rem;
+                    list-style: none;
+                    background-color: #686666;
+                    margin: 5px auto;
+                    transition: all .2s;
+                    justify-content: space-between;
+                    &:hover{
+                        background-color: #434040;
+                    }
+                    & button{
+                        padding: 5px 15px;
+                        border-radius: .6rem;
+                        border: none;
+                        outline: none;
+                        background-color: pink;
+                        color: rgb(174, 37, 37);
+                        transition: all .3s;
+                        &:hover{
+                            background-color: rgba(48, 48, 174, 0.779);
+                            color: white;
+                        }
+                    }
+
+                }
+            }
+        }
+    }
+}
