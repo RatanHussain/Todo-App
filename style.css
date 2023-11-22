@@ -60,16 +60,23 @@
                 border: 1px solid rgba(0, 0, 255, 0.723);
                 border-left: 4px solid blue;
             }
+            #message1{
+                background-color: rgba(204, 116, 53, 0.353);
+                padding: 5px 10px ;
+                transition: all .2s;
+                border: 1px solid rgba(255, 55, 0, 0.723);
+                border-left: 4px solid rgb(255, 0, 0);
+            }
             #todoLists{
                 display: flex;
                 flex-direction: column;
                 justify-content: center;
                 & li{
                     display: flex;
-                    height: 50%;
+                    height: 0%;
                     width: 95%;
                     align-items: center;
-                    padding: 5px 10px;
+                    padding: 5px ;
                     border-radius: .3rem;
                     list-style: none;
                     background-color: #686666;
@@ -80,19 +87,19 @@
                         background-color: #434040;
                     }
                     & button{
-                        padding: 5px 15px;
-                        border-radius: .6rem;
+                        padding: 5px 12px;
+                        border-radius: .2rem;
                         border: none;
                         outline: none;
                         background-color: pink;
                         color: rgb(174, 37, 37);
                         transition: all .3s;
+                        cursor: pointer;
                         &:hover{
                             background-color: rgba(48, 48, 174, 0.779);
                             color: white;
                         }
                     }
-
                 }
             }
         }
