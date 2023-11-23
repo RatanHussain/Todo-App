@@ -21,8 +21,12 @@ const createTodo = (todoId , todoValue)=>{
     let deltodo = todoElement.querySelector('#deleteBtn');
     deltodo.addEventListener('click',(event)=>{
         let deltag = event.target.parentElement.parentElement.parentElement
-        todoLists.removeChild(deltag)
-        messagefn('Todo is Deleted.', 'message1')
+        todoLists.removeChild(deltag);
+        messagefn('Todo is Deleted.', 'message1');
+        let todos = getTodosFromLocalStorage();
+        todos = todos.filter((todo) => todo.id !== deltag.id);
+        localStorage.setItem('mytodos', JSON.stringify(todos));
+
     })
 }
 
@@ -35,15 +39,37 @@ let messagefn = (sms , id)=>{
     }, 1000);
 }
 
+// getT odos From LocalStorage
+const getTodosFromLocalStorage = ()=>{
+    return localStorage.getItem('mytodos') ? JSON.parse(localStorage.getItem('mytodos')) : [];
+}
+
 
 // add Todo
 const addTodo = (event)=>{
     event.preventDefault();
+    let todovalue = inputTodo.value;
     // Generate unique id
     const id = Date.now().toString();
-    createTodo(id , inputTodo.value)
-    messagefn('Todo is Created','message')
+    createTodo(id , todovalue)
+    messagefn('Todo is Created','message');
+
+
+    // adding toto in localStoeage
+    const todos = getTodosFromLocalStorage();
+    todos.push({id,todovalue});
+    localStorage.setItem('mytodos', JSON.stringify(todos));
+
+    // inputTodo.value = '';
+
+}
+
+const loadtodo = ()=>{
+    let todos = getTodosFromLocalStorage();
+    todos.map((todo)=> createTodo(todo.id , todo.todovalue));
+
 }
 
 // listener here
 todoForm.addEventListener('submit',addTodo)
+window.addEventListener('DOMContentLoaded',loadtodo)
