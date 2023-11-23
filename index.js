@@ -48,10 +48,13 @@ const getTodosFromLocalStorage = ()=>{
 // add Todo
 const addTodo = (event)=>{
     event.preventDefault();
-    let todovalue = inputTodo.value;
+    if(inputTodo.value === ''){
+        messagefn('You must enter a todo.','message1')
+    }else{
+        let todovalue = inputTodo.value;
     // Generate unique id
     const id = Date.now().toString();
-    createTodo(id , todovalue)
+    createTodo(id , todovalue);
     messagefn('Todo is Created','message');
 
 
@@ -60,7 +63,8 @@ const addTodo = (event)=>{
     todos.push({id,todovalue});
     localStorage.setItem('mytodos', JSON.stringify(todos));
 
-    // inputTodo.value = '';
+    inputTodo.value = '';
+    }
 
 }
 

@@ -15,7 +15,7 @@
             background-color: black;
             color: white;
             min-height: 70%;
-            min-width: 65%;
+            min-width: 50%;
             border-radius: 10px;
             overflow: auto;
             box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.603);
@@ -103,5 +103,12 @@
                 }
             }
         }
+    }
+}
+
+
+@media screen and (max-width:768px){
+    .container .card{
+        width: 90%;
     }
 }
